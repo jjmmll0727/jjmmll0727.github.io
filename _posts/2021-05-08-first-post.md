@@ -1,6 +1,7 @@
 ---
 title: "github.io 블로그 시작하기"
 excerpt: "GitHub Blog 서비스인 github.io 블로그 시작하기로 했다."
+categories: "project"
 ---
 
 GitHub Blog 서비스인 github.io 블로그 시작하기로 했다.
@@ -21,3 +22,5 @@ jekyll은 Gem 이라는 Ruby 기반의 패키지 매니저를 통해서 받을 �
 확인하고 push 하자
 
 ### 참고로 api path는 markdown file name을 따라간다
+
+##### categories: "..." 이 부분이 어떤 카테고리에 들어가는 post인지 결정해준다.

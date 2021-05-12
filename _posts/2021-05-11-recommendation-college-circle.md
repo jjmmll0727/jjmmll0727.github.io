@@ -5,7 +5,7 @@ categories: "project"
 ---
 
 <div style = "font-size: 20px; line-height: 25px;">
-<center>recommendation circle</center><br><br>
+<center>recommendation college circle</center><br><br>
 </div>
 
 <P style = "font-style: 15px; line-heigt: 25px; text-align: left">

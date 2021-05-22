@@ -22,7 +22,7 @@ double slash에서 미니 프로젝트를 진행하고 나서 시작한 final pr
 미니 프로젝트를 진행할 때는 따로 브랜치를 따지 않고 master 브랜치에 지속적으로 작업을 했었다.
 <br>
 협업을 해야하는 프로젝트라면 반드시 브랜치를 따야 하지만, 내가 속해 있던 팀에서는 다들 협업이 처음이라 branch의 필요성을 알지 못했었다. <br>
-하지만 팀을 재구성하여 파이널 프로젝트를 진행할 때는 팀장의 주도하에 fork 후, branch를 만들어 PR하는 방식으로 통일했었다. 
+하지만 팀을 재구성하여 파이널 프로젝트를 진행할 때는 의 코드 리뷰어의 주도하에 fork 후, branch를 만들어 PR하는 방식으로 통일했었다. 
 <br>
 협업의 기본 자세를 배운 경험이었다. 
 </p><br>
@@ -38,10 +38,25 @@ double slash에서 미니 프로젝트를 진행하고 나서 시작한 final pr
 <li>loweCamelCase</li>
 <li>PR 올릴때 불필요한 주석은 제외</li>
 <li>validation check</li>
-<li>let 보다 const 권장</li>
+<p>nodejs 의 모듈중에 `validator` 라는 모듈이 있다. validator 모듈을 통해 체크 하는 함수를 만들고 미들웨어로 사용할 수 있다. </p>
+<li>let 보다 `const` 권장</li>
+기본적으로 const를 사용하고 재할당이 필요한 경우 let 변수를 사용한다<br>
 <li>== 보다 === 권장</li>
 </ul>
 </div>
+<p style = "font-size: 15px"><center>express-validator</center></p>
+
+```javascript
+phoneNumber: {
+    type: String,
+    validate: {
+      validator: function (v) {
+        return /\d{3}\d{4}\d{4}/.test(v);
+      },
+    },
+    required: [true, 'User phone number required'],
+  },
+```
 <br>
 <div style = "font-size: 23px; line-heignt:2em; font-family: fantasy;">
 <strong>2. 비동기처리</strong><br>
@@ -94,13 +109,77 @@ code formatter prettier와 에러를 잡아주는 eslint<br>
 
 <br>
 <div style = "font-size: 23px; line-heignt:2em; font-family: fantasy;">
-<strong>4. code style</strong><br>
+<strong>4. refactoring</strong><br>
 </div>
 <p style = "font-size: 15px; text-align: left; line-heignt:3em;">
 express는 많은 개발자들이 사용하는 프레임워크로 다양한 코딩스타일이 존재한다. <br>
 구글링을 통해서 봐도 전세계 사람들이 다양한 스타일로 restful api를 작성한다. <br>
-하지만 이번에 파이널 프로젝트를 경험하면서 정말 깔끔하고 가독성이 좋은 스타일(module.exports로 한번에 모든 메소드 처리)을 배우게 되었다. 
+하지만 이번에 파이널 프로젝트를 경험하고 refactoring 과정을 거치면서 정말 깔끔하고 가독성이 좋은 스타일(module.exports로 한번에 모든 메소드 처리)을 배우게 되었다. 
 </p>
+<br>
+기존 방식
+<br>
+
+```javascript
+exports.register = (req, res, next) => {
+    const { userId, password, birth,name, email, phone } = req.body
+    if (!userId || !password || !birth || !email || !phone || !name) {
+        res.status(409).json({
+            code: 105, //필수 입력값 미입력
+            message: '필수입력값이 입력되지 않았습니다'
+        })
+    } else {
+        User.findOne({ userId: req.body.userId }).exec().then(user => {
+            // evec() mongo query에서 버전3 에서는 promise를 위해 exec이 필요했어, 버전4에서는 필요 x
+            if (user) {
+                return res.status(409).json({
+                    code: 106, //존재하는 아이디 실패
+                    message: "이미 존재하는 ID 입니다"
+
+                });
+            }
+
+            const newUser = new User({
+                userId, password, birth,name, email, phone
+                // userId: req.body.userId,
+                // password: req.body.password,
+                // birth: req.body.birth,
+                // email: req.body.email,
+                // phone: req.body.phone,
+                // homephone: req.body.homephone
+                
+            });
+
+            
+            bcrypt.genSalt(10, (err, salt) => {
+
+                bcrypt.hash(newUser.password, salt, (err, hash) => {
+                    newUser.password = hash;
+                    newUser.save().then(result => {
+                        // console.log(result);
+                        res.status(201).json({
+                            code: 202, //회원가입 성공
+                            message: "POST 요청을 통한 사용자데이터 저장",
+                            savedUser: newUser
+                        });
+                    }).catch((err) => {
+                        console.log(err);
+                        res.status(500).json({
+                            code: 110, //회원가입 에러
+                            error: "서버 측에서 발생한 에러입니다."
+
+                        });
+                    });
+                });
+            })
+        })
+    }
+
+}
+```
+<br>
+변화된 스타일
+<br>
 
 ```javascript
 const signup = async (req, res) => {

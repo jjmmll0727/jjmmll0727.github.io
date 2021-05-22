@@ -98,7 +98,7 @@ author:
   bio: "I am an software developer who interested in Back-End & deep learning"
   location: "Korea Aerospace univ."
   email: "jjmmll0727@gmail.com"
-  # links:
+  links:
   #   - label: "Email"
   #     icon: "fas fa-fw fa-envelope-square"
   #     # url: "mailto:your.name@email.com"
@@ -111,9 +111,9 @@ author:
   #   - label: "Facebook"
   #     icon: "fab fa-fw fa-facebook-square"
   #     # url: "https://facebook.com/"
-  #   - label: "GitHub"
-  #     icon: "fab fa-fw fa-github"
-  #     url: "https://github.com/jjmmll0727"
+     - label: "GitHub"
+       icon: "fab fa-fw fa-github"
+       url: "https://github.com/jjmmll0727"
   #   - label: "Instagram"
   #     icon: "fab fa-fw fa-instagram"
   #     # url: "https://instagram.com/"

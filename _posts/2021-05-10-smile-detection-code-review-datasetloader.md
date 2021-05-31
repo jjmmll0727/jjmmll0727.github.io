@@ -35,7 +35,8 @@ class DatasetLoader:
         self.data_path = data_path
 
     def load(self, verbose=-1, image_width=28, label_name_position=-3): ## labe_name_position: img_path를 split을 하고 -3인 위치에 label이 있다
-                                                                        ## ex) 2021 / 05 / 10 / smile / thomas / jpg
+                                                                        ## ex
+                                                                        #2021 / 05 / 10 / smile / thomas / jpg
                                                                         ## 해당 path에서 img를 가져와 전처리 후 forward 한 값과 label 값이 일치하는지 확인
         """
         Function to load the dataset from given path

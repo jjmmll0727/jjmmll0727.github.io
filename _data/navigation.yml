@@ -4,3 +4,5 @@ main:
     url: /project/
   - title: "research"
     url: /research/
+  - title: "algorithm"
+    url: /algorithm/

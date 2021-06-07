@@ -1,5 +1,5 @@
 ---
-title: "recommendation of circles"
+title: "첫번쨰 연합동아리"
 excerpt: "recommendation service that proceeded in double slash"
 categories: "project"
 ---

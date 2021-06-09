@@ -5,6 +5,15 @@ excerpt: "reviewing datasetloader.py"
 header:
   teaser: ../assets/images/fall.jpg
 ---
+<style>
+code {
+  font-family: Consolas,"courier new";
+  color: crimson;
+  background-color: #f1f1f1;
+  padding: 2px;
+  font-size: 105%;
+}
+</style>
 
 <div style = "font-size: 20px; line-height: 25px;">
 <center>datasetloader.py</center><br><br>

@@ -4,6 +4,16 @@ excerpt: "device for blind"
 categories: "project"
 ---
 
+<style>
+code {
+  font-family: Consolas,"courier new";
+  color: crimson;
+  background-color: #f1f1f1;
+  padding: 2px;
+  font-size: 105%;
+}
+</style>
+
 <div style = "font-size: 25px; line-height: 25px;">
 <center>raspberry pi</center><br><br>
 </div>

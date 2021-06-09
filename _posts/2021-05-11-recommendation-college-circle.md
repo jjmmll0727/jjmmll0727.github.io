@@ -1,8 +1,17 @@
 ---
-title: "첫번쨰 연합동아리"
+title: "첫번째 연합동아리"
 excerpt: "recommendation service that proceeded in double slash"
 categories: "project"
 ---
+<style>
+code {
+  font-family: Consolas,"courier new";
+  color: crimson;
+  background-color: #f1f1f1;
+  padding: 2px;
+  font-size: 105%;
+}
+</style>
 
 <div style = "font-size: 20px; line-height: 25px;">
 <center>recommendation college circle</center><br><br>

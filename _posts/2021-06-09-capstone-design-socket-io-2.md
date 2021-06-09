@@ -50,7 +50,9 @@ android에서 넘어온 데이터는 영상을 캡쳐한 <code>byte array</code>
 <div style = "font-size: 15px; line-height: 25px; font-family: monospace;">
 test를 위한 python script
 <br>
-<img src = "\assets\images\pytest.png"  border=0 width = "300" height = "100"><br><br>
+<img src = "\assets\images\pytest.png"  border=0 width = "300" height = "100"><br>
+android에서 받은 data buffer 0 0 0 000000.... 를 보낼 시 데이터의 사이즈가 너무 커서 python script로 전송을 실패하는 것을 볼 수 있다. <br>
+반면에 임시 데이터 "sendingdata" 를 보낼 시에는 데이터의 사이즈가 작아 python script와의 연동이 성공함을 볼 수 있다. <br><br>
 
 
 &#9989; 이번학기에는 이렇게 끝났지만, 많은 시행착오를 통해 성장할 수 있는 중요한 시간이었다. 

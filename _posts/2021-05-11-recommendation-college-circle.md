@@ -1,5 +1,5 @@
 ---
-title: "첫번째 연합동아리"
+title: "첫번째 연합동아리 - 2"
 excerpt: "recommendation service that proceeded in double slash"
 categories: "project"
 ---

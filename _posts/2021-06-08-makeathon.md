@@ -12,6 +12,12 @@ code {
   padding: 2px;
   font-size: 105%;
 }
+video { 
+  max-width: 80%; 
+  display: block; 
+  margin: 20px auto; 
+}
+    
 </style>
 
 <div style = "font-size: 25px; line-height: 25px;">
@@ -51,7 +57,11 @@ code {
 <div style = "font-size: 15px; line-height: 25px;">
 <center>시연동영상</center>
 </div>
-<center>
-<video src = "\assets\images\final_makertone.mp4" type = "video/mp4" width = "500" controls></video>
-</center>
+<video controls>
+  <source src="\assets\videos\final_makertone.mp4" type="video/mp4">
+  <strong>Your browser does not support the video tag.</strong>
+</video>
 
+<br>
+<div style = "font-size: 15px; line-height: 25px;">
+<center> <a href="/assets/ppt/makeathon.pptx">발표자료(ppt) 다운로드</a>  </center>

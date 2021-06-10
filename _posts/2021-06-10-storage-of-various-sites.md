@@ -1,5 +1,5 @@
 ---
-title: "첫번째 연합동아리 - 1"
+title: "첫번째 연합동아리 - mini project"
 excerpt: "storage of various sites"
 categories: "project"
 ---
@@ -36,21 +36,31 @@ JWT token은 <code>Json Web Token</code>의 줄임말로 웹 표준<code>(RFC 75
 <li>정보 전달</li>
 </ul>
 <br><br>
-유저가 로그인을 하면 서버가 유저의 회원정보와 암호화 키를 기반으로 한 암호화된 token을 유저에게 제공한다. 유저는 그 토큰을 가지고 있다가 서버에 요청을 할 때 마다 해당 토큰을 서버에 넘겨준다. 서버는 토큰이 유효하고 인증되었는지 확인하고 이를 처리한다. <br><br>
+<img src = "\assets\images\jwt.png"  border=0 width = "600" height = "300"><br><br>
+유저가 로그인을 하면 서버가 유저의 회원정보와 암호화 키를 기반으로 한 암호화된 <code>token</code>을 유저에게 제공한다. 유저는 그 토큰을 가지고 있다가 서버에 요청을 할 때 마다 해당 토큰을 서버에 넘겨준다. 서버는 토큰이 유효하고 인증되었는지 확인하고 이를 처리한다. <br><br>
 그렇기 때문에 서버는 유저의 세션을 유지할 필요가 없고, 또 유저가 로그인을 했는지 안했는지 확인할 필요가 없다. 단지 토큰만 신경쓰면 되는 방식이기 때문에 서버의 자원을 아낄 수 있다. 
 <br><br>
 나는 처음에 로그인을 할 때 토큰을 지급하고, 추후에 인증해야 하는 라우터에서 미들웨어로 처리하였다. <br><br>
 </div>
 <div style = "font-size: 20px; line-height: 25px;">
 &#9995;<strong>token 발급</strong><br><br>
-<img src = "\assets\images\givetoken2.png"  border=0 width = "700" height = "400"><br>
+<img src = "\assets\images\givetoken3.png"  border=0 width = "700" height = "400">
+</div>
+<br><br>
+<div style = "font-size: 15px; line-height: 25px;">
+유저가 회원가입을 할 때 <code>bcryptjs</code> 모듈로 비밀번호를 암호화한다. <br><br>로그인을 할때 유저가 입력한 비밀번호와 암호화된 비밀번호를 bcryptjs 모듈의 <code>compare</code> 함수를 통해 비교한다.<br><br>
+일치한다면 <code>jsonwebtoken</code> 모듈의 sign함수를 통해 token을 지급한다. 만기 시간은 3시간으로 설정한다.  
 </div><br>
 
 
 <div style = "font-size: 20px; line-height: 25px;">
 &#9995;<strong>미들웨어로 사용자 인증 처리</strong><br><br>
-<img src = "\assets\images\tokenauth2.png"  border=0 width = "700" height = "400"><br>
-</div><br>
+<img src = "\assets\images\tokenauth2.png"  border=0 width = "700" height = "400">
+</div>
+<br><br>
+<div style = "font-size: 15px; line-height: 25px;">
+유저가 사용자 인증을 하려고 요청을 할 때 header의 <code>authorization</code>에 token을 담아서 서버로 보내준다. <br><br>
+서버에서는 <code>jsonwebtoken</code> 모듈의 verify함수를 통해 일치하는지 확인한다. <br><br>
 
 
 

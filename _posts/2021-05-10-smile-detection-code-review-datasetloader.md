@@ -1,6 +1,6 @@
 ---
 title: "smile detection code review - datasetloader"
-categories: "research"
+categories: "deep-learning"
 excerpt: "reviewing datasetloader.py"
 header:
   teaser: ../assets/images/fall.jpg

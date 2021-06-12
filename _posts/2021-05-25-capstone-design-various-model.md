@@ -1,7 +1,7 @@
 ---
 title: "capstone design - trained model"
 excerpt: "various model"
-categories: "project"
+categories: "capstone-design"
 ---
 
 <style>

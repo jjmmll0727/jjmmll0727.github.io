@@ -1,7 +1,7 @@
 ---
 title: "capstone design - socket.io - 2"
 excerpt: "posibility according to data size"
-categories: "project"
+categories: "capstone-design"
 ---
 
 <style>

@@ -1,7 +1,7 @@
 ---
 title: "capstone design - socket.io - 1"
 excerpt: "consecutive protocol"
-categories: "project"
+categories: "capstone-design"
 ---
 <style>
 code {

@@ -1,7 +1,7 @@
 ---
 title: "capstone design - chaqoupy"
 excerpt: "chaqoupy - connection with android and python script"
-categories: "project"
+categories: "capstone-design"
 ---
 
 <style>

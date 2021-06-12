@@ -1,6 +1,6 @@
 ---
 title: "smile detection code review - train"
-categories: "research"
+categories: "deep-learning"
 excerpt: "reviewing train.py"
 header:
   teaser: ../assets/images/fall.jpg

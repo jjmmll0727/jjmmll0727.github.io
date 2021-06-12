@@ -1,7 +1,7 @@
 ---
 title: "항공대 소프트웨어중심대학사업부 - husky"
 excerpt: "husky & lint-staged 세팅"
-categories: "project"
+categories: "kau-sw-business"
 ---
 
 <style>

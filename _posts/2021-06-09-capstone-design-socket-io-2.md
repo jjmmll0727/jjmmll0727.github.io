@@ -63,3 +63,6 @@ android에서 받은 data buffer 0 0 0 000000.... 를 보낼 시 데이터의 �
 <li>child_process 모듈을 통해서는 큰 사이즈의 데이터를 주고 받을 수 없다. (그래서 이런 방식으로 하지 않고 <code>tensorflow lite</code> 라는 android 전용 새로운 툴을 만들어냈구나...)</li>
 </ol>
 
+<p style = "font-size: 15px;"><a href = "https://github.com/jjmmll0727/Capstone_Design/tree/main/socketio">github-repository</a></p>
+
+

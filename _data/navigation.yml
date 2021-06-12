@@ -1,8 +1,5 @@
 # main links
+
 main:
-  - title: "project"
-    url: /project/
-  - title: "research"
-    url: /research/
-  - title: "algorithm"
-    url: /algorithm/
+  - title: "Categories"
+    url: /categories/

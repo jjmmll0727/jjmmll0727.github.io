@@ -368,4 +368,15 @@ module.exports = {
 };
 ```
 
+<br><br>
+<div style = "font-size: 23px; line-heignt:2em; font-family: fantasy;">
+<strong>6. NOSQL</strong><br>
+</div>
+
+<div style = "font-size: 15px; line-heignt:2em; font-family: monospace;">
+데이터베이스는 nosql 인 MongoDB 를 사용하였다. <br><br>
+mongodb odm 을 활용하여 효율적으로 개발하였다. 테스트는 mongodb compass를 사용하였다. <br><br>
+<center><img src = "\assets\images\mongo.png"  border=0 width = "600" height = "300"></center><br><br>
+</div>
+
 <p style = "font-size: 15px;"><a href = "https://github.com/jjmmll0727/5th-final-team2.5/tree/master/packages/dodam-server">github-repository</a></p>
